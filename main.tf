@@ -8,6 +8,7 @@ resource "github_repository" "repo" {
   template {
     owner      = var.github_owner
     repository = var.template_repo
+    include_all_branches = true
   }
 }
 
