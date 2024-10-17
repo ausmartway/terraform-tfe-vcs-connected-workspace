@@ -5,15 +5,15 @@ variable "tfc_oauth_token" {
 }
 
 variable "github_owner" {
-    type = string
-    default  ="ausmartway"
-    description = "the owner of the template repository, this can be github orgnization name."
+  type        = string
+  default     = "ausmartway"
+  description = "the owner of the template repository, this can be github orgnization name."
 }
 
 variable "template_repo" {
-    type = string
-    default = "terraform-template"
-    description = "the name of the template repository"
+  type        = string
+  default     = "terraform-template"
+  description = "the name of the template repository"
 }
 
 variable "name" {
@@ -38,18 +38,18 @@ variable "tags" {
 }
 
 variable "organization" {
-    type = string
-    description = "TFC/E orgnization name"
+  type        = string
+  description = "TFC/E orgnization name"
 }
 
 variable "vcsbranch" {
-  type = string
+  type        = string
   description = "The branch of the repository"
-  default = ""
+  default     = ""
 }
 
 variable "vcsworkingdirectory" {
-  type = string
+  type        = string
   description = "The root directory of Terraform code in the repository"
-  default = ""
+  default     = ""
 }

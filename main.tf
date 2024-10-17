@@ -15,7 +15,6 @@ resource "tfe_workspace" "workspace" {
   description           = var.workspace_description
   allow_destroy_plan    = true
   auto_apply            = true
-  execution_mode        = "remote"
   file_triggers_enabled = false
   global_remote_state   = false
 
@@ -28,20 +27,20 @@ resource "tfe_workspace" "workspace" {
   tag_names                     = var.tags
   terraform_version             = var.terraform_version
   trigger_prefixes              = []
-  working_directory = var.vcsworkingdirectory
+  working_directory             = var.vcsworkingdirectory
   vcs_repo {
     identifier         = github_repository.repo.full_name
     ingress_submodules = false
     oauth_token_id     = var.tfc_oauth_token
-    branch = var.vcsbranch
+    branch             = var.vcsbranch
   }
 
   lifecycle {
     ignore_changes = [
       # Ignore changes to tags, e.g. because a management agent
       # updates these based on some ruleset managed elsewhere.
-      agent_pool_id,
-      execution_mode,
+      # agent_pool_id,
+      # execution_mode,
     ]
   }
 }
