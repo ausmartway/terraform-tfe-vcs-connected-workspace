@@ -16,7 +16,7 @@ resource "tfe_workspace" "workspace" {
   allow_destroy_plan    = true
   auto_apply            = true
   file_triggers_enabled = false
-  global_remote_state   = false
+  # global_remote_state   = false         # This is a deprecated attribute from tfe provider 0.61.0
 
   name = var.name
 
